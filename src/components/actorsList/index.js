@@ -1,0 +1,19 @@
+import React from "react";
+import ActorCard from "../actorCard";
+import Grid from "@mui/material/Grid";
+
+const ActorList = ({ actors }) => {
+  const actorCards = actors.map((actor) => (
+    <Grid key={actor.id} item xs={12} sm={6} md={4} lg={3} xl={2}>
+      <ActorCard key={actor.id} actor={actor} />
+    </Grid>
+  ));
+
+  return (
+    <Grid container spacing={2}>
+      {actorCards}
+    </Grid>
+  );
+};
+
+export default ActorList;
