@@ -85,3 +85,5 @@ export const getMovies = () => {
     ).then(res => res.json())
     .then(json => json.results);
     };
+
+    
