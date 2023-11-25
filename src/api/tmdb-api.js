@@ -94,4 +94,20 @@ export const getMovies = () => {
         .then((json) => json.results);
     };
 
-    
+    export const getMovieCredits = (id) => {
+      return fetch(
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+      )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch movie credits');
+        }
+        return response.json();
+      })
+      .then((json) => {
+        return json.cast; 
+      })
+      .catch((error) => {
+        throw error;
+      });
+    };
