@@ -2,13 +2,32 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import PageTemplate from "../components/templateMoviePage";
 import MovieReview from "../components/movieReview";
+import { useQuery } from "react-query";
+import { getMovie } from "../api/tmdb-api";
+import Spinner from "../components/spinner";
 
 const MovieReviewPage = (props) => {
   let location = useLocation();
-  const {movie, review} = location.state;
-  
+  const { movie, review } = location.state;
+
+  const { data: movieData, error, isLoading, isError } = useQuery(
+    ["movie", { id: movie.id }],
+    () => getMovie(movie.id), 
+    {
+      staleTime: 30000
+    }
+  );
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  if (isError) {
+    return <h1>{error.message}</h1>;
+  }
+
   return (
-    <PageTemplate movie={movie}>
+    <PageTemplate movie={movieData}>
       <MovieReview review={review} />
     </PageTemplate>
   );
