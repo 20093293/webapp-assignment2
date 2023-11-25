@@ -12,7 +12,10 @@ const WriteReviewPage = (props) => {
 
   const { data: movie, error, isLoading, isError } = useQuery(
     ["movie", { id: movieId }],
-    getMovie
+    () => getMovie(movieId), 
+    {
+      staleTime: 30000, 
+    }
   );
 
   if (isLoading) {
@@ -22,6 +25,7 @@ const WriteReviewPage = (props) => {
   if (isError) {
     return <h1>{error.message}</h1>;
   }
+  
   return (
     <PageTemplate movie={movie}>
       <ReviewForm movie={movie} />
