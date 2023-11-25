@@ -14,10 +14,9 @@ import { Link } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 
 export default function ActorCard({ actor }) {
-  // You can replace or modify the useContext functionality based on your needs for actor favorites or other context
+
   const { favorites, addToFavorites } = useContext(MoviesContext);
 
-  // Placeholder logic for favorite actors - Modify according to your requirements
   if (favorites.find((id) => id === actor.id)) {
     actor.favorite = true;
   } else {
@@ -36,7 +35,6 @@ export default function ActorCard({ actor }) {
         avatar={
           actor.favorite ? (
             <Avatar sx={{ backgroundColor: 'red' }}>
-              {/* You can add icon for favorite actor */}
             </Avatar>
           ) : null
         }
@@ -51,19 +49,17 @@ export default function ActorCard({ actor }) {
         image={
           actor.profile_path
             ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
-            : img // Placeholder image for actor
+            : img 
         }
       />
       <CardContent>
         <Grid container>
-          {/* You can display more details about the actor here */}
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {actor.popularity}{" "} {/* Sample detail: Popularity */}
+              {"  "} {actor.popularity}{" "}
             </Typography>
           </Grid>
-          {/* Add more details about the actor as needed */}
         </Grid>
       </CardContent>
     </Card>

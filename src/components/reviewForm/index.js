@@ -8,6 +8,7 @@ import { useForm, Controller } from "react-hook-form";
 import { MoviesContext } from "../../contexts/moviesContext";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import { CheckBox } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
 const ratings = [
@@ -198,6 +199,16 @@ const handleSnackClose = (event) => {
             </TextField>
           )}
         />
+
+    <Box sx={{ display: "flex", alignItems: "center", marginTop: 2 }}>
+        <CheckBox
+        onChange={() => {}}
+          inputProps={{ "aria-label": "Watched the film" }}
+        />
+        <Typography variant="body1">
+          I have watched the film
+        </Typography>
+      </Box>
 
         <Box sx={styles.buttons}>
           <Button
