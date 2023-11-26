@@ -5,7 +5,7 @@ import PageTemplate from "../components/templateMoviePage";
 import { getMovie, getMovieCredits } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
-import CreditsCard from '../components/creditsCard'; // Import CreditCard component
+import CreditsCard from '../components/creditsCard';
 
 const MoviePage = (props) => {
   const { id } = useParams();
@@ -16,7 +16,7 @@ const MoviePage = (props) => {
 
   const { data: creditsData } = useQuery(
     ["movieCredits", { id: id }],
-    () => getMovieCredits(id) // Assuming getMovieCredits fetches credits based on movie ID
+    () => getMovieCredits(id) 
   );
 
   if (isLoading || !creditsData) {

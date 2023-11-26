@@ -1,74 +1,46 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Assignment 1 - ReactJS app.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Name: Conor Grace
+Video Link: https://youtu.be/g9c92jhbH04
 
-## Available Scripts
+## Overview.
 
-In the project directory, you can run:
+This repo contains the web app assignment 1 of a movies app that uses React. It utilises the TMDB API for its functionality. It contains pages for the home page, favourites page, movie details of specific movies, writing a review of a movie, upcoming movies, top rated movies and top actors and actresses. Its an app that I will look to develop as part of the second assignment.
 
-### `npm start`
+### Features.
+[ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
+ 
++ New page for Top Rated Movies
++ New Page fot Top Actors/Actresses
++ Added Movie Credits in the movie details page
++ Added a checkbox to the movie review page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup requirements.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+just running npm install to setup the node modules, and using your own tmdb key
 
-### `npm test`
+## API endpoints.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[ List the __additional__ TMDB endpoints used, giving the description and pathname for each one.] 
 
-### `npm run build`
+e.g.
++ Top rated movies - /movie/top_rated
++ Top Actors - /person/popular
++ Movie credits = /movie/:id/credits
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Routing.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[ List the __new routes__ supported by your app and state the associated page.]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
++ /movies.toprated -displays the highest rated movies
++ /person/actors - displays the highest rated actors
 
-### `npm run eject`
+[If relevant, state what aspects of your app are protected (i.e. require authentication) and what is public.]
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Independent learning (If relevant).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Itemize the technologies/techniques you researched independently and adopted in your project, 
+i.e. aspects not covered in the lectures/labs. Include the source code filenames that illustrate these 
+(we do not require code excerpts) and provide references to the online resources that helped you (articles/blogs).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# react-assignment-1
->>>>>>> 3d2e71c157623c26b3d5b52b8988252645f18be4
++ Material UI CheckBox - https://mui.com/material-ui/react-checkbox/
