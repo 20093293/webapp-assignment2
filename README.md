@@ -1,46 +1,50 @@
-# Assignment 1 - ReactJS app.
+# Assignment 2 - Web API.
 
 Name: Conor Grace
-Video Link: https://youtu.be/g9c92jhbH04
+Video link: https://youtu.be/k-zx6UtDW3U
 
-## Overview.
+## Features.
 
-This repo contains the web app assignment 1 of a movies app that uses React. It utilises the TMDB API for its functionality. It contains pages for the home page, favourites page, movie details of specific movies, writing a review of a movie, upcoming movies, top rated movies and top actors and actresses. Its an app that I will look to develop as part of the second assignment.
-
-### Features.
-[ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
+A bullet-point list of the ADDITIONAL features you have implemented in the API **THAT WERE NOT IN THE LABS** (or modifications to existing features)
  
-+ New page for Top Rated Movies
-+ New Page fot Top Actors/Actresses
-+ Added Movie Credits in the movie details page
-+ Added a checkbox to the movie review page
+ + LogIn + Signup before accessing certain pages
+ + Implemented the actors api into the movies db
+ + Implemented the popular actors into the movies db
 
 ## Setup requirements.
 
-just running npm install to setup the node modules, and using your own tmdb key
++ Standard setup apart from Keys
 
-## API endpoints.
+## API Configuration
 
-[ List the __additional__ TMDB endpoints used, giving the description and pathname for each one.] 
+Describe any configuration that needs to take place before running the API. For example, creating an `.env` file and what variables to put in it. Give an example of how this might be done.
 
-e.g.
-+ Top rated movies - /movie/top_rated
-+ Top Actors - /person/popular
-+ Movie credits = /movie/:id/credits
+REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE README OR ON GITHUB, just placeholders as indicated below:
 
-## Routing.
+______________________
+NODE_ENV=development
+PORT=8080
+HOST=localhost
+MONGO_DB=mongodb+srv://conorg990:<PASSWORD>@movies.4pev4uz.mongodb.net/movies?retryWrites=true&w=majority (message in slack if you need the password)
+secret=YourJWTSecret (message me in slack if needed)
+______________________
 
-[ List the __new routes__ supported by your app and state the associated page.]
+## API Design
+Give an overview of your web API design, perhaps similar to the following: 
 
-+ /movies.toprated -displays the highest rated movies
-+ /person/actors - displays the highest rated actors
+- /api/actors | GET | Gets a list of actors 
+- /api/actors/tmdb/popular | GET | Gets the most popular actors
+- /api/movies/upcoming | GET | Get all upcoming movies
 
-[If relevant, state what aspects of your app are protected (i.e. require authentication) and what is public.]
 
-## Independent learning (If relevant).
+## Security and Authentication
 
-Itemize the technologies/techniques you researched independently and adopted in your project, 
-i.e. aspects not covered in the lectures/labs. Include the source code filenames that illustrate these 
-(we do not require code excerpts) and provide references to the online resources that helped you (articles/blogs).
+I used the jsonwebtoken and the same authentication in the labs. I have all files except the default pages protected, so the user has to sign up, or in to access the app.
 
-+ Material UI CheckBox - https://mui.com/material-ui/react-checkbox/
+## Integrating with React App
+
+It had its own difficulties. I had to reset the git for this to individualise it, then I had to review which potential areas to implement the api to fully it. I recognised that i could utilise the user stuff from the previous lab work, as well as refactor the movie part into this app. From here, I had to use the Actors part for personalised deevelopment for this.
+
+## Independent learning (if relevant)
+
+N/A
