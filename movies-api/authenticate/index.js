@@ -4,10 +4,14 @@ import User from '../api/users/userModel';
 const authenticate = async (request, response, next) => {
     try { 
         const authHeader = request.headers.authorization;
-        if (!authHeader) throw new Error('No authorization header');
+        if (!authHeader) {
+            return response.status(401).json({ error: 'No authorization header' });
+        }
 
         const token = authHeader.split(" ")[1];
-        if (!token) throw new Error('Bearer token not found');
+        if (!token) {
+            return response.status(401).json({ error: 'Bearer token not found' });
+        }
 
         const decoded = await jwt.verify(token, process.env.SECRET); 
         console.log(decoded);
@@ -15,8 +19,9 @@ const authenticate = async (request, response, next) => {
         // Assuming decoded contains a username field
         const user = await User.findByUserName(decoded.username); 
         if (!user) {
-            throw new Error('User not found');
+            return response.status(401).json({ error: 'User not found' });
         }
+
         request.user = user; // Optionally attach the user to the request for further use
         next();
     } catch(err) {
